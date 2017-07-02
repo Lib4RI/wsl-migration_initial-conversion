@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf8"?>
+<FILEMAKERTOREFWORKSSETUP>
+  <REFERENCETYPE>Newspaper or Magazine Article</REFERENCETYPE>
+  <!--
+    REMARKS REGARDING <FILTEREXPRESSION>-tag:
+    - strings that exist as field-names in FileMaker will be
+      replaced by their values
+    - those values, if not set (i.e., having a value of None), will be
+      replaced by ''
+    - if the final expression eval()-uates to True, the publication will be
+      included
+    - otherwise the publication will be discarded
+    - there is an optional attribute "EXCLUDEPERSONMATCHES" that can have
+      as value a comma-separated list from the set
+      {'AuthorsOnly', 'EditorsOnly', 'AuthorsAndEditors',
+       'NeitherAuthorsNorEditors'}:
+      Publications that have matches in the (co-)authors,
+      resp. editor lists alone, or both or neither,
+      are then excluded from the list to export.
+    EXAMPLES:
+    - <FILTEREXPRESSION>True</FILTEREXPRESSION>
+    - <FILTEREXPRESSION EXCLUDEPERSONMATCHES="EditorsOnly, AuthorsAndEditors, NeitherAuthorsNorEditors">'Jl.Revie' == 'x' and 'Repository Export' != 'nein'</FILTEREXPRESSION>
+  -->
+  <FILTEREXPRESSION>'Tageszeitung' == 'x' and 'Repository Export' != 'nein'</FILTEREXPRESSION>
+</FILEMAKERTOREFWORKSSETUP>
